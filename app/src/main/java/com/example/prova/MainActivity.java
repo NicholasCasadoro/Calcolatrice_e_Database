@@ -44,33 +44,36 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-
     public void calcola(View v)
     {
         String strNum1 = number1.getText().toString();
         String strNum2 = number2.getText().toString();
         String oper = operando.getText().toString();
-        int res = 0;
-        if(oper.equals("+")){
-            int n1 = Integer.parseInt(strNum1);
-            int n2 = Integer.parseInt(strNum2);
-            res = n1 + n2 ;
-        } else if (oper.equals("-")) {
-            int n1 = Integer.parseInt(strNum1);
-            int n2 = Integer.parseInt(strNum2);
-            res = n1 - n2 ;
-        }else if (oper.equals("*")) {
-            int n1 = Integer.parseInt(strNum1);
-            int n2 = Integer.parseInt(strNum2);
-            res = n1 * n2 ;
-        }else if (oper.equals("/")) {
-            int n1 = Integer.parseInt(strNum1);
-            int n2 = Integer.parseInt(strNum2);
-            res = n1 / n2 ;
+        if(oper.equals("+") || oper.equals("-") || oper.equals("/") || oper.equals("*")) {
+            int res = 0;
+            if (oper.equals("+")) {
+                int n1 = Integer.parseInt(strNum1);
+                int n2 = Integer.parseInt(strNum2);
+                res = n1 + n2;
+            } else if (oper.equals("-")) {
+                int n1 = Integer.parseInt(strNum1);
+                int n2 = Integer.parseInt(strNum2);
+                res = n1 - n2;
+            } else if (oper.equals("*")) {
+                int n1 = Integer.parseInt(strNum1);
+                int n2 = Integer.parseInt(strNum2);
+                res = n1 * n2;
+            } else if (oper.equals("/")) {
+                int n1 = Integer.parseInt(strNum1);
+                int n2 = Integer.parseInt(strNum2);
+                res = n1 / n2;
+            }
+            String strStr = String.valueOf(res);
+            txtResult.setText(strStr);
+        }else{
+            String error = String.valueOf("Operando Errato");
+            txtResult.setText(error);
         }
-
-        String strStr = String.valueOf(res);
-        txtResult.setText(strStr);
     }
 
 
