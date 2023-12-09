@@ -36,6 +36,7 @@ public class MainActivity extends AppCompatActivity {
         operando = findViewById(R.id.operando);
 
         Button btnInfo = findViewById(R.id.btnInfo);
+        Button btnVisualizzaRisultato = findViewById(R.id.btnVisualizzaRisultato);
     }
 
     public void apriInfo(View view) {
@@ -71,7 +72,14 @@ public class MainActivity extends AppCompatActivity {
 
         String strStr = String.valueOf(res);
         txtResult.setText(strStr);
+
+        DBHelper dbHelper = new DBHelper(this);
+        dbHelper.salvaOperazione(Integer.parseInt(strNum1), Integer.parseInt(strNum2), oper, res);
     }
 
+    public void apriRisultatoActivity(View view) {
+        Intent intent = new Intent(this, RisultatoActivity.class);
+        startActivity(intent);
+    }
 
 }

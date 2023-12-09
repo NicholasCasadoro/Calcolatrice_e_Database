@@ -26,6 +26,10 @@
             android:name=".InfoActivity"
             android:exported="true" />
 
+        <activity
+            android:name=".RisultatoActivity"
+            android:exported="true" />
+
     </application>
 
 </manifest>
