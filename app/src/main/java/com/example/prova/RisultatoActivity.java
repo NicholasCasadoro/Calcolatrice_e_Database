@@ -20,13 +20,12 @@ public class RisultatoActivity extends AppCompatActivity {
         setContentView(R.layout.activity_risultato);
         txtRisultato = findViewById(R.id.txtRisultato);
 
-        // Recupera l'ultimo risultato dal database e visualizzalo
         DBHelper dbHelper = new DBHelper(this);
         int ultimoRisultato = dbHelper.getUltimoRisultato();
         txtRisultato.setText("Ultimo risultato: " + ultimoRisultato);
     }
 
     public void tornaAllaMainActivity(View view) {
-        finish(); // Chiudi l'activity corrente e torna alla MainActivity
+        finish();
     }
 }
