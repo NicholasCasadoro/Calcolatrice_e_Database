@@ -13,7 +13,6 @@ public class InfoActivity extends AppCompatActivity {
         setContentView(R.layout.activity_info);
     }
 
-    // Metodo per gestire il click del pulsante "Indietro"
     public void tornaAllaMainActivity(View view) {
         Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
